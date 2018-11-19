@@ -27,7 +27,19 @@ client.on('ready', () => {
     message.channel.send(`☑ | Done ... The Broadcast Message Has Been Sent For ${message.guild.members.size} Members`).then(m => m.delete(5000));
     message.guild.members.forEach(m => {
     var bc = new
-})
+       Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setTitle('Broadcast | برودكاست')
+       .addField('Server | سيرفر', message.guild.name)
+       .addField('Sender | المرسل', message.author.username)
+       .addField('Message | الرسالة', args)
+       .setImage("https://cdn.discordapp.com/icons/482968365405831201/f56fae12dc5756b57594287a2284dc6c.jpg?size=128")
+       .setThumbnail(message.author.avatarURL)
+       .setFooter(copy, client.user.avatarURL);
+    m.send({ bc })
+    msg.delete();
+    })
+    })
     reaction2.on("collect", r => {
     message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
     msg.delete();
