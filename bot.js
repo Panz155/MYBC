@@ -27,7 +27,7 @@ client.on('ready', () => {
     message.channel.send(`☑ | Done ... The Broadcast Message Has Been Sent For ${message.guild.members.size} Members`).then(m => m.delete(5000));
     message.guild.members.forEach(m => {
     var bc = new
-
+}
     reaction2.on("collect", r => {
     message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
     msg.delete();
