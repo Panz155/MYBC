@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  console.log(`BCOBX login ${client.user.tag}!`);
+  console.log(`legends,bc login ${client.user.tag}!`);
 });
 
  client.on('message', message => {
@@ -12,7 +12,7 @@ client.on('ready', () => {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "OBX Bot";
+    let copy = "legends,bc Bot";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
     msg.react('✅')
@@ -48,7 +48,7 @@ client.on('ready', () => {
     }
 });
 const adminprefix = "!";
-const devs = ['420287914149150731','500662619267399698'];
+const devs = ['424639806522523649','424639806522523649'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
